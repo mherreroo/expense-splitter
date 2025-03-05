@@ -36,4 +36,3 @@ def home():
 if __name__ == "__main__":
     app.run(debug=True)
 
-#ChatGPT has been used through the whole process: OpenAI. (2025). ChatGPT (March 1 version) [Large language model]. https://chatgpt.com 
