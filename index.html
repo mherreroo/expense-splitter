@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Splitter</title>
+</head>
+<body>
+    <h1>Expense Splitter</h1>
+    
+    <form method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+        
+        <label for="amount">Amount Spent:</label>
+        <input type="number" step="0.01" name="amount" required>
+        
+        <button type="submit">Add Expense</button>
+    </form>
+
+    <h2>Final Balances</h2>
+    <ul>
+        {% for name, balance in balances.items() %}
+            <li>
+                {% if balance > 0 %}
+                    {{ name }} should be reimbursed ${{ balance }}
+                {% elif balance < 0 %}
+                    {{ name }} owes ${{ balance | abs }}
+                {% else %}
+                    {{ name }} is settled up.
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+#ChatGPT has been used through the whole process: OpenAI. (2025). ChatGPT (March 1 version) [Large language model]. https://chatgpt.com 
